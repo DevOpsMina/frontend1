@@ -3,7 +3,7 @@ name: FirstReactDeploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
