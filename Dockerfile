@@ -16,7 +16,7 @@ COPY . .
 # Build the React app
 RUN npm run build
 
-# Stage 2: Serve the React app using Nginx
+# Stage 2: Serve the React app using Nginxsudo
 FROM nginx:alpine
 
 # Copy the build output to Nginx's web directory
