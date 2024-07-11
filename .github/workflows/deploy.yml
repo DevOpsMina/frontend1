@@ -35,7 +35,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.EC2_PORT}}
           script: |
-            sudo docker pull minna2/frontend
+            sudo docker pull minna2/frontend:latest
             sudo docker stop frontend || true
             sudo docker rm frontend || true
             sudo docker run -d --name frontend -p 80:80 minna2/frontend:latest
