@@ -38,5 +38,5 @@ jobs:
             sudo docker pull minna2/frontend:latest
             sudo docker stop frontend || true
             sudo docker rm frontend || true
-            sudo docker run -d --name frontend -p 80:80 minna2/frontend:latest
+            sudo docker run -d --name frontend --network=host minna2/frontend:latest
             echo "It is completed succesfully"

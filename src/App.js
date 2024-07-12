@@ -32,7 +32,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/data', { name, description });
+      await axios.post('http://13.250.102.58:3001/api/data', { name, description });
       alert('Data added successfully!');
       setName('');
       setDescription('');
