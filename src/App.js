@@ -66,7 +66,7 @@ function App() {
           />
         </label>
         <br />
-        <button type="submit">Add Data</button>
+        <button type="submit">Add Dataa</button>
       </form>
     </div>
   );
