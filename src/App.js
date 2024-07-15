@@ -141,7 +141,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://13.215.207.67:3001/api/data');
+      const response = await axios.get('http://13.250.100.90:3001/api/data');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
