@@ -20,8 +20,9 @@ const App = () => {
   );
 };
 
-export default App;**/
+export default App;
 
+///
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -32,7 +33,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://13.250.102.58:3001/api/data', { name, description });
+      await axios.post('http://13.215.207.67:3001/api/data', { name, description });
       alert('Data added successfully!');
       setName('');
       setDescription('');
@@ -57,7 +58,7 @@ function App() {
         </label>
         <br />
         <label>
-          Description Please:
+          Give Description Please:
           <input
             type="text"
             value={description}
@@ -72,4 +73,57 @@ function App() {
   );
 }
 
+export default App;**/
+
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function App() {
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://13.215.207.67:3001/api/data', { name, description });
+      alert('Data added successfully!');
+      setName('');
+      setDescription('');
+    } catch (error) {
+      console.error('Error adding data:', error.response ? error.response.data : error.message);
+      alert('Error adding data: ' + (error.response ? error.response.data.error : error.message));
+    }
+  };
+
+  return (
+    <div className="App">
+      <h1>Add Data to MySQL via React and Node.js</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </label>
+        <br />
+        <label>
+          Give Description Please:
+          <input
+            type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+        </label>
+        <br />
+        <button type="submit">Add Data</button>
+      </form>
+    </div>
+  );
+}
+
 export default App;
+
