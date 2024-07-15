@@ -151,7 +151,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://13.215.207.67:3001/api/data', { name, description });
+      await axios.post('http://13.250.100.90:3001/api/data', { name, description });
       alert('Data added successfully!');
       setName('');
       setDescription('');
