@@ -141,7 +141,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://13.215.46.116:3001/api/data');
+      const response = await axios.get('https://api-mina.learn.cloudlaya.com:3001/api/data');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -151,7 +151,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://13.215.46.116:3001/api/data', { name, description });
+      await axios.post('https://api-mina.learn.cloudlaya.com:3001/api/data', { name, description });
       alert('Data added successfully!');
       setName('');
       setDescription('');
