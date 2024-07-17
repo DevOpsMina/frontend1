@@ -14,18 +14,17 @@ RUN npm install
 COPY . .
 
 # Build the React app
-#RUN npm run build
+RUN npm run build
 
 # Stage 2: Serve the React app using Nginxsudo
-#FROM nginx:alpine
+FROM nginx:alpine
 
 # Copy the build output to Nginx's web directory
-#COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 
 # Expose port 80
-#EXPOSE 80
-EXPOSE 3000
+EXPOSE 80
 
 # Start Nginx server
-#CMD ["nginx", "-g", "daemon off;"]
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]
+#CMD ["npm", "start"]
